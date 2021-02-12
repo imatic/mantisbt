@@ -1620,6 +1620,11 @@ class BugFilterQuery extends DbQuery {
 					if( isset( $t_filter_query['join'] ) ) {
 						$this->add_join( $t_filter_query['join'] );
 					}
+					if ( isset( $t_filter_query['joins'] ) ) {
+						foreach ($t_filter_query['joins'] as $t_join) {
+							$this->add_join( $t_join );
+						}
+					}
 					$t_params = null;
 					if( isset( $t_filter_query['params'] ) && is_array( $t_filter_query['params'] ) ) {
 						$t_params = $t_filter_query['params'];
