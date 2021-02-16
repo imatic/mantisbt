@@ -1628,6 +1628,9 @@ class BugFilterQuery extends DbQuery {
 						$t_where = $this->helper_convert_legacy_clause( $t_filter_query['where'], $t_params );
 						$this->add_where( $t_where );
 					}
+					if ( isset( $t_filter_query['use_query2'] ) && $t_filter_query['use_query2'] ) {
+						$t_filter_object->query2( $this->filter[$t_field_name], $this );
+					}
 				}
 			}
 		}
